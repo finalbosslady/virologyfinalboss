@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virology Final Boss</title>
+    <style>
+        /* Add CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            animation: pulse 2s infinite alternate; /* Animation for header */
+        }
+        nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+        nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        main {
+            padding: 20px;
+        }
+        footer {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+        }
+        /* CSS Animation for header */
+        @keyframes pulse {
+            from {
+                transform: scale(1);
+            }
+            to {
+                transform: scale(1.1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Virology Final Boss</h1>
+        <p>Are you ready to defeat viruses?</p>
+    </header>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#resources">Resources</a>
+        <!-- Add more navigation links as needed -->
+    </nav>
+    <main>
+        <h2>About</h2>
+        <p>This is the homepage of our virology website. You can learn about various viruses, including RSV, Influenza, and COVID-19, and their impact on public health.</p>
+        <!-- Add more content here -->
+        <h2>Interactive Quiz</h2>
+        <p>Test your knowledge about viruses with our interactive quiz:</p>
+        <button onclick="startQuiz()">Start Quiz</button>
+        <div id="quiz"></div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Virology Final Boss</p>
+    </footer>
+
+    <script>
+        // JavaScript code for interactive quiz
+        function startQuiz() {
+            // Replace this with your quiz questions and answers
+            const quizData = [
+                { question: "What is the smallest known virus?", answers: ["Parvovirus", "HIV", "Adenovirus", "Hepatitis B"], correctAnswer: "Parvovirus" },
+                { question: "Which virus causes COVID-19?", answers: ["Influenza virus", "Coronavirus", "Ebola virus", "HIV"], correctAnswer: "Coronavirus" },
+                { question: "What is the main mode of transmission of the Zika virus?", answers: ["Mosquito bites", "Sexual contact", "Airborne droplets", "Contaminated food"], correctAnswer: "Mosquito bites" }
+            ];
+
+            const quizContainer = document.getElementById('quiz');
+            quizContainer.innerHTML = ''; // Clear previous quiz content
+
+            quizData.forEach((questionData, index) => {
+                const questionNumber = index + 1;
+                const questionElement = document.createElement('div');
+                questionElement.innerHTML = `
+                    <h3>Question ${questionNumber}:</h3>
+                    <p>${questionData.question}</p>
+                    <ul>${questionData.answers.map(answer => `<li>${answer}</li>`).join('')}</ul>
+                `;
+                quizContainer.appendChild(questionElement);
+            });
+        }
+    </script>
+</body>
+</html>
